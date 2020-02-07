@@ -85,6 +85,10 @@ function shouldSkipDay(dayRow) {
     }
 }
 
+function addStartButton() {
+    $('html').find('[class*="box"]').after('<div style="margin-bottom:25px; display:flex;justify-content:center"><div style="height:50px;padding:13px 23px; background-color:#7c73e6;color:white;width:40%;text-align:center">'+selectedLanguage.startProcess+'</div></div>')
+}
+
 function addDialog() {
   $('html').append(`<div id="dialog-confirm" title="Empty the recycle bin?">
   <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>
