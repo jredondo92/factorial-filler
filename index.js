@@ -9,6 +9,11 @@ css.setAttribute('rel', 'stylesheet');
 css.setAttribute('type', 'text/css');
 css.setAttribute('href', 'https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css');
 
+var cssCustom = document.createElement('link');
+cssCustom.setAttribute('rel', 'stylesheet');
+cssCustom.setAttribute('type', 'text/css');
+cssCustom.setAttribute('href', 'https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css');
+
 document.getElementsByTagName('head')[0].appendChild(jq).appendChild(jqui).appendChild(css);
 
 function setNativeValue(element, value) {
