@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name         New Userscript
+// @name         Factorial lazy fill
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  try to take over the world!
-// @author       You
-// @match        https://app.factorialhr.com/attendance/*
+// @version      0.9
+// @description  This script is for the lazy people like me
+// @author       Joaquim Redondo
+// @match        https://app.factorialhr.com/*
 // @grant        unsafeWindow
 // @require      http://code.jquery.com/jquery-3.4.1.min.js
 // ==/UserScript==
@@ -12,7 +12,7 @@
 (function() {
     'use strict';
     var jq = document.createElement('script');
-    jq.src = "https://code.jquery.com/jquery-3.4.1.min.js";  /* Include any online jquery library you need */
+    jq.src = "https://code.jquery.com/jquery-3.4.1.min.js";
 
     var jqui = document.createElement('script');
     jqui.src = "https://code.jquery.com/ui/1.12.1/jquery-ui.js"
