@@ -104,7 +104,10 @@
     }
 
     function addStartButton() {
-        $('html').find('[class*="box"]').after('<div class="addButtonContainer" style="margin-bottom:25px; display:flex;justify-content:center"><div class="addButton" id="addButton onclick="javascript:openEverything({shouldSkipHolidays: true})" style="height:50px;padding:13px 23px; background-color:#7c73e6;color:white;width:40%;text-align:center">'+selectedLanguage.startProcess+'</div></div>');
+        $('html').find('[class*="box"]').after('<div class="addButtonContainer" style="margin-bottom:25px; display:flex;justify-content:center"><div class="addButton" id="addButton" style="height:50px;padding:13px 23px; background-color:#7c73e6;color:white;width:40%;text-align:center">'+selectedLanguage.startProcess+'</div></div>');
+        $( "#addButton" ).click(function() {
+            openEverything({ shouldSkipHolidays: true })
+        });
     }
 
     function addDialog() {
@@ -161,10 +164,10 @@
 
             const e = new Event('input', {bubbles: true})
 
-            setNativeValue(inputs[0], "10:00");
+            setNativeValue(inputs[0], "9:00");
             setNativeValue(inputs[1], "13:00");
             setNativeValue(inputs[2], "14:30");
-            setNativeValue(inputs[3], "19:00");
+            setNativeValue(inputs[3], "18:30");
 
             inputs[0].dispatchEvent(e)
             inputs[1].dispatchEvent(e)
@@ -222,7 +225,6 @@
                 callback();
             } else {
                 setTimeout(function() {
-                    console.log('EXISTS')
                     waitForEl(selector, callback);
                 }, 100);
             }
@@ -247,10 +249,4 @@
     waitForEl('[class*="box"]', function() {
         startProcess()
     });
-
-    $( "#addButton" ).click(function() {
-        console.log('BUTTON CLICKED')
-    });
-
-    // Your code here...
 })();
