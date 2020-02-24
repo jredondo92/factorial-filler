@@ -180,7 +180,7 @@
     }
 
     function submitSchedules() {
-        $("button:contains("+LANG[selectedLanguage].save+")").each(function (index, value) {
+        $("button:contains("+selectedLanguage.save+")").each(function (index, value) {
             $(this).click()
         })
     }
