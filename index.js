@@ -87,7 +87,7 @@
 
         changeValues()
         changeValues()
-        // submitSchedules()
+        submitSchedules()
     }
 
     function isWeekend(weekDay) {
