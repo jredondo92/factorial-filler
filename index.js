@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Factorial lazy fill
 // @namespace    http://tampermonkey.net/
-// @version      0.9
+// @version      0.9.9
 // @description  This script is for the lazy people like me
 // @author       Joaquim Redondo
 // @match        https://app.factorialhr.com/*
@@ -55,7 +55,7 @@
             friday: 'Viernes',
             saturday: 'Sabado',
             save: 'Guardar',
-            startProcess: 'Rellenar automaticamente'
+            startProcess: 'Rellenar automáticamente'
         },
         ENGLISH: {
             friday: 'Friday',
@@ -109,7 +109,7 @@
     }
 
     function addStartButton() {
-        $('body').append('<div class="addButtonContainer"><div id="addButton"><i class="fa fa-play fa-2x"></i></div></div>');
+        $('body').append('<div class="addButtonContainer" title="'+ selectedLanguage.startProcess +'"><div id="addButton"><i class="fa fa-play fa-2x"></i></div></div>');
         $( "#addButton" ).click(function() {
             openEverything({ shouldSkipHolidays: true })
         });
@@ -139,6 +139,7 @@
     }
 
     function detectLanguage() {
+        debugger
         switch ($('html').find('[class*="worked_hours"]').find('[class*="text"]').text().toUpperCase()) {
             case 'HORAS TRABAJADAS':
                 selectedLanguage = LANG[SPANISH]
@@ -164,8 +165,7 @@
 
             var form = $(this).find('[class*="formLayout"]')
             var inputs = $(form).find('input')
-
-            if ($(inputs[0]).attr('disabled')) return true
+            if ($(inputs[0]).attr('disabled') || inputs.length === 0) return true
 
             const e = new Event('input', {bubbles: true})
 
@@ -235,8 +235,7 @@
             }
         };
 
-        waitForEl2('[class*="box"]', function() {
-
+        waitForEl2('[class*="worked_hours"]', function() {
             addStartButton()
         });
     }
@@ -251,7 +250,7 @@
         }
     };
 
-    waitForEl('[class*="box"]', function() {
+    waitForEl('[class*="worked_hours"]', function() {
         if (window.location.href.indexOf('clock-in') > -1) {
         startProcess()
         }
