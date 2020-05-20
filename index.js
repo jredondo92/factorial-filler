@@ -139,7 +139,6 @@
     }
 
     function detectLanguage() {
-        debugger
         switch ($('html').find('[class*="worked_hours"]').find('[class*="text"]').text().toUpperCase()) {
             case 'HORAS TRABAJADAS':
                 selectedLanguage = LANG[SPANISH]
