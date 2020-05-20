@@ -1,19 +1,16 @@
-.addButton {
-    background-color: #7c73e6;
-    height: 50px;
-    padding: 13px 23px;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 600;
-    border-radius: 5px;
-    border: 2px solid transparent;
-    box-sizing: border-box;
-    color: #fff;
+.addButtonContainer {
+    position: fixed;
+    right: 30px;
+    bottom: 85px;
+    z-index: 999;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(-60deg,#695ee8,#47a7ff);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    color: white;
     cursor: pointer;
-    display: block;
-    font-family: Avenir Next W01,Helvetica,Arial,sans-serif;
-    outline: none;
-    text-align: center;
-    text-decoration: none;
-    width: 40%;
+    align-items: center;
 }

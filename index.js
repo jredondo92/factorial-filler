@@ -22,12 +22,17 @@
     css.setAttribute('type', 'text/css');
     css.setAttribute('href', 'https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css');
 
+    var icons = document.createElement('link');
+    icons.setAttribute('rel', 'stylesheet');
+    icons.setAttribute('type', 'text/css');
+    icons.setAttribute('href', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
     var cssCustom = document.createElement('link');
     cssCustom.setAttribute('rel', 'stylesheet');
     cssCustom.setAttribute('type', 'text/css');
     cssCustom.setAttribute('href', 'https://cdn.jsdelivr.net/gh/jredondo92/factorial-filler/index.css');
 
-    document.getElementsByTagName('head')[0].appendChild(jq).appendChild(jqui).appendChild(css).appendChild(cssCustom);
+    document.getElementsByTagName('head')[0].appendChild(jq).appendChild(jqui).appendChild(css).appendChild(icons).appendChild(cssCustom);
 
     function setNativeValue(element, value) {
         const valueSetter = Object.getOwnPropertyDescriptor(element, 'value').set;
@@ -104,7 +109,7 @@
     }
 
     function addStartButton() {
-        $('html').find('[class*="box"]').after('<div class="addButtonContainer" style="margin-bottom:25px; display:flex;justify-content:center"><div class="addButton" id="addButton" style="height:50px;padding:13px 23px; background-color:#7c73e6;color:white;width:40%;text-align:center">'+selectedLanguage.startProcess+'</div></div>');
+        $('body').append('<div class="addButtonContainer"><div id="addButton"><i class="fa fa-play fa-2x"></i></div></div>');
         $( "#addButton" ).click(function() {
             openEverything({ shouldSkipHolidays: true })
         });
@@ -247,6 +252,8 @@
     };
 
     waitForEl('[class*="box"]', function() {
+        if (window.location.href.indexOf('clock-in') > -1) {
         startProcess()
+        }
     });
 })();
