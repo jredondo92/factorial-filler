@@ -30,7 +30,7 @@
     var cssCustom = document.createElement('link');
     cssCustom.setAttribute('rel', 'stylesheet');
     cssCustom.setAttribute('type', 'text/css');
-    cssCustom.setAttribute('href', 'https://cdn.jsdelivr.net/gh/jredondo92/factorial-filler/index.css');
+    cssCustom.setAttribute('href', 'https://cdn.jsdelivr.net/gh/jredondo92/factorial-filler@latest/index.css');
 
     document.getElementsByTagName('head')[0].appendChild(jq).appendChild(jqui).appendChild(css).appendChild(icons).appendChild(cssCustom);
 
