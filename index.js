@@ -81,7 +81,7 @@
             }
 
             var form = $(this).find('[class*="formLayout"]')
-            var addButton = $(form).find('button[class*="terciary"]')
+            var addButton = $(form).find('button')
 
             if (addButton) {
                 $(addButton).click()
